@@ -1,0 +1,41 @@
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write # 'write' is correct for deployment
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code and submodules
+        uses: actions/checkout@v4
+        with:
+          # CRITICAL ADDITION: This fetches the theme submodule
+          submodules: recursive 
+          # You also need the token to fetch the submodule contents
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.134.3"
+          extended: true
+
+      - name: Build website
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: success() # Only deploy if the build step was successful
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # Ensure this branch name matches your GitHub Pages configuration.
+          publish_branch: gh-pages # <--- Recommended to use 'gh-pages' or 'main/docs'
+          force_orphan: true
