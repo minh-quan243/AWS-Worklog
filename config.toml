@@ -1,4 +1,4 @@
-baseURL = "https://minh-quan243.github.io/AWS-Workslog/"
+baseURL = "https://minh-quan243.github.io/AWS-Worklog/"
 
 relativeURLs = true
 canonifyURLs = true
@@ -16,7 +16,7 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "workshop"
   # Git hub repo link
   editURL = ""
-  description = "Official Internship Report of Nguyen Minh Quan - AI member (TheBois) at First Cloud AI Journey 2026. "
+  description = "Official Internship Report of Nguyen Minh Quan - AI member at First Cloud AI Journey 2026. "
   author = "minhquan02102005@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false

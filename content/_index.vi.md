@@ -1,31 +1,31 @@
 ---
 title: "Báo cáo thực tập"
-date: "2025-09-09"
+date: "2026-01-11"
 weight: 1
 chapter: false
 ---
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Huỳnh An Khương
+&emsp; **Họ và tên:** Nguyễn Minh Quân
 
-&emsp; **Số điện thoại:** 0964440342
+&emsp; **Số điện thoại:** 0975816491
 
-&emsp; **Email:** huynhankhuong0511@gmail.com
+&emsp; **Email:** minhquan02102005@gmail.com
 
 &emsp; **Trường:** Trường Đại học FPT Thành Phố Hồ Chí Minh
 
-&emsp; **Ngành:** Công nghệ thông tin
+&emsp; **Ngành:** Trí Tuệ Nhân Tạo
 
 &emsp; **Lớp:** AWS082025
 
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
+&emsp; **Công ty thực tập:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 08/09/2025 đến ngày 12/12/2025
+&emsp; **Thời gian thực tập:** Từ ngày 11/01/2026 đến ngày 17/04/2026
 
-![Your profile picture](/images/KhuongAnhThe.jpg)
+![Your profile picture](/images/profile.jpg)
 
 
 

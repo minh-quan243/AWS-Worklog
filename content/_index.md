@@ -1,6 +1,6 @@
 ---
 title: "Internship Report"
-date: "2025-09-09"
+date: "2026-01-11"
 weight: 1
 chapter: false
 ---
@@ -9,25 +9,25 @@ chapter: false
 # Internship Report
 
 ### Student Information:
-&emsp; **Full Name:** Huynh An Khuong
+&emsp; **Full Name:** Nguyen Minh Quan
 
-&emsp; **Phone Number:** 0964440342
+&emsp; **Phone Number:** 0975816491
 
-&emsp; **Email:** huynhankhuong0511@gmail.com
+&emsp; **Email:** minhquan02102005@gmail.com
 
 &emsp; **University:** FPTU Ho Chi Minh Campus
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Artificial Intelligence
 
-&emsp; **Class** AWS082025
+&emsp; **Class** AWS092026
 
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+&emsp; **Internship Company:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 
 &emsp; **Internship Position:** FCJA Cloud Intern
 
-&emsp; **Internship Duration:** From 08/09/2025 to 12/12/2025
+&emsp; **Internship Duration:** From 11/01/2026 to 17/04/2026
 
-![Your profile picture](/images/KhuongAnhThe.jpg)
+![Your profile picture](/images/profile.jpg)
 
 ### Report Content
 
