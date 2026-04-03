@@ -1,57 +1,59 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
-weight: 1
+title: "Worklog Tuần 10"
+date: 2026-03-16
+weight: 10
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 10:
 
-### Mục tiêu tuần 1:
+* Triển khai một **dự án thực tế hoàn chỉnh trên AWS**.
+* Áp dụng các dịch vụ đã học để xây dựng hệ thống end-to-end.
+* Làm quen với quy trình:
+  * Thiết kế kiến trúc hệ thống
+  * Triển khai (deployment)
+  * Kiểm thử (testing)
+  * Đánh giá và tối ưu
+* Bước đầu xây dựng một hệ thống theo hướng **serverless + event-driven**.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc đã thực hiện trong tuần:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| 2 | - Phân tích yêu cầu dự án <br>&emsp; + Xác định input/output hệ thống <br>&emsp; + Thiết kế luồng xử lý dữ liệu <br> - Đề xuất kiến trúc serverless <br>&emsp; + S3 → Lambda → SQS → Transcribe → DynamoDB <br> - Xác định các dịch vụ AWS cần sử dụng | 16/03/2026 | 16/03/2026 |  |
+| 3 | - Thiết lập **IAM** <br>&emsp; + Tạo role cho Lambda và service <br>&emsp; + Áp dụng principle of least privilege <br> - Tạo **S3 bucket** <br>&emsp; + Cấu hình upload file audio <br> - Khởi tạo **DynamoDB** <br>&emsp; + Thiết kế bảng lưu metadata và kết quả | 17/03/2026 | 17/03/2026 |  |
+| 4 | - Xây dựng **Lambda function** <br>&emsp; + Xử lý event từ S3 <br>&emsp; + Gửi message vào SQS <br> - Tạo **API Gateway** <br>&emsp; + Expose endpoint để truy vấn kết quả <br> - Thiết lập trigger <br>&emsp; + S3 → Lambda <br>&emsp; + Lambda → SQS | 18/03/2026 | 18/03/2026 |  |
+| 5 | - Tích hợp **AWS Transcribe** <br>&emsp; + Xử lý audio thành text <br> - Kết hợp với **SQS** <br>&emsp; + Xử lý message bất đồng bộ <br>&emsp; + Tránh blocking hệ thống <br> - Lưu kết quả vào DynamoDB | 19/03/2026 | 19/03/2026 |  |
+| 6 | - Kiểm thử hệ thống <br>&emsp; + Upload file audio → kiểm tra pipeline <br>&emsp; + Kiểm tra kết quả trả về từ API <br> - Debug lỗi và tối ưu <br>&emsp; + Kiểm tra log CloudWatch <br>&emsp; + Điều chỉnh timeout và permission <br> - Đánh giá hiệu năng và hoàn thiện | 20/03/2026 | 20/03/2026 |  |
 
+---
 
-### Kết quả đạt được tuần 1:
+### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thiết kế kiến trúc hệ thống:
+  * S3 → trigger Lambda
+  * Lambda → gửi message qua SQS
+  * SQS → xử lý bất đồng bộ
+  * Transcribe → xử lý audio
+  * DynamoDB → lưu kết quả
+  * API Gateway → cung cấp endpoint
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Áp dụng kiến thức bảo mật:
+  * Sử dụng IAM role đúng mục đích
+  * Không hardcode credentials
+  * Kiểm soát quyền truy cập giữa các service
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Xây dựng backend serverless:
+  * Viết Lambda function xử lý logic
+  * Tạo API để truy vấn dữ liệu
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Hiểu rõ luồng dữ liệu trong hệ thống:
+  * Event-driven processing
+  * Asynchronous workflow
+  * Decoupling giữa các thành phần
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Thực hiện kiểm thử hệ thống:
+  * Test với dữ liệu thực tế (audio file)
+  * Debug lỗi qua CloudWatch logs
+  * Tối ưu cấu hình để hệ thống hoạt động ổn định

@@ -1,57 +1,61 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
-weight: 1
+title: "Worklog Tuần 7"
+date: 2026-02-23
+weight: 7
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 7:
 
-### Mục tiêu tuần 1:
+* Tiếp cận các công cụ nâng cao trong **AWS** phục vụ phát triển và quản lý hệ thống.
+* Hiểu cách tối ưu tài nguyên và chi phí trong môi trường cloud.
+* Nâng cao khả năng giám sát hệ thống và phân tích hoạt động mạng.
+* Củng cố kiến thức về bảo mật và kiểm soát truy cập nâng cao.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+---
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc đã thực hiện trong tuần:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| 2 | - Tìm hiểu **AWS CDK (Cloud Development Kit)** <br>&emsp; + Khái niệm Infrastructure as Code nâng cao <br>&emsp; + CDK Constructs và Stack <br>&emsp; + So sánh CDK với CloudFormation <br> - Thực hành <br>&emsp; + Cài đặt môi trường CDK (Node.js/Python) <br>&emsp; + Viết code tạo resource (S3/EC2) <br>&emsp; + Deploy stack bằng CDK CLI | 23/02/2026 | 23/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Nghiên cứu tối ưu tài nguyên **EC2** <br>&emsp; + Khái niệm **Right-Sizing** <br>&emsp; + Theo dõi CPU, Memory usage <br>&emsp; + Lựa chọn instance phù hợp workload <br> - Thực hành <br>&emsp; + Phân tích metrics trên CloudWatch <br>&emsp; + Điều chỉnh instance type <br>&emsp; + So sánh hiệu năng và chi phí trước/sau tối ưu | 24/02/2026 | 24/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Thực hiện lab về giám sát mạng <br>&emsp; + Tìm hiểu **VPC Flow Logs** <br>&emsp; + Cấu hình logging cho VPC/Subnet <br>&emsp; + Phân tích traffic logs <br> - Thực hành <br>&emsp; + Kiểm tra kết nối giữa EC2 instances <br>&emsp; + Phát hiện và xử lý lỗi network | 25/02/2026 | 25/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Tìm hiểu **Service Quotas** <br>&emsp; + Các giới hạn mặc định của AWS <br>&emsp; + Cách request tăng quota <br> - Nghiên cứu **Cost Management** <br>&emsp; + AWS Cost Explorer <br>&emsp; + Theo dõi và phân tích chi phí <br>&emsp; + Thiết lập cảnh báo ngân sách (Budget) | 26/02/2026 | 26/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Khám phá **IAM nâng cao** <br>&emsp; + IAM Policies nâng cao <br>&emsp; + Condition trong policy <br>&emsp; + Resource-based vs Identity-based policy <br> - Thực hành <br>&emsp; + Viết policy với điều kiện (IP, time, MFA) <br>&emsp; + Kiểm tra và validate quyền truy cập <br>&emsp; + Áp dụng vào tình huống thực tế | 27/02/2026 | 27/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Kết quả đạt được tuần 1:
+---
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả đạt được tuần 7:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Làm quen với **AWS CDK**:
+  * Hiểu cách định nghĩa hạ tầng bằng code (IaC nâng cao)
+  * Triển khai tài nguyên AWS thông qua lập trình
+  * Nhận thấy lợi ích của automation trong triển khai hệ thống
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Nắm được cách tối ưu tài nguyên **EC2**:
+  * Biết cách đánh giá hiệu năng dựa trên metrics
+  * Áp dụng **right-sizing** để giảm chi phí
+  * Hiểu mối quan hệ giữa hiệu năng và chi phí
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Thực hành giám sát mạng:
+  * Sử dụng **VPC Flow Logs** để theo dõi lưu lượng
+  * Phân tích traffic giữa các thành phần trong hệ thống
+  * Hỗ trợ troubleshooting các vấn đề network
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Hiểu cách quản lý giới hạn và chi phí:
+  * Sử dụng **Cost Explorer** để theo dõi usage
+  * Thiết lập cảnh báo ngân sách
+  * Nhận thức rõ tầm quan trọng của cost control trong cloud
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Nâng cao kiến thức về **IAM**:
+  * Xây dựng policy với điều kiện cụ thể
+  * Kiểm soát truy cập chi tiết hơn (IP, thời gian, MFA)
+  * Hiểu rõ nguyên tắc bảo mật nâng cao
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hiểu rõ hơn về vận hành hệ thống:
+  * Monitoring → CloudWatch, Flow Logs
+  * Cost → Budget, Cost Explorer
+  * Security → IAM nâng cao
+  * Automation → CDK

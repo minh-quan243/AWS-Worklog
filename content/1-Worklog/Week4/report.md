@@ -1,57 +1,62 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 4 Worklog"
+date: 2026-02-02
+weight: 4
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 4 Objectives:
 
-### Week 1 Objectives:
+* Master networking components in **AWS** and learn how to design basic network architecture.
+* Clearly understand network-level security mechanisms and how to control resource access.
+* Get familiar with services that improve system scalability and performance.
+* Reinforce knowledge through hands-on labs.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **VPC (Virtual Private Cloud)** <br>&emsp; + Concept of private network in the cloud <br>&emsp; + CIDR blocks and subnetting <br>&emsp; + Public vs Private Subnets <br>&emsp; + Route Tables and routing <br>&emsp; + Internet Gateway and NAT Gateway <br> - Practice <br>&emsp; + Create a new VPC <br>&emsp; + Create and configure subnets <br>&emsp; + Set up route tables for public/private subnets <br>&emsp; + Enable Internet access for EC2 instances | 02/02/2026 | 02/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Study network security mechanisms <br>&emsp; + **Security Groups** (stateful firewall) <br>&emsp; + **Network ACLs** (stateless firewall) <br>&emsp; + Compare Security Groups vs NACLs <br> - Practice <br>&emsp; + Create allow/deny traffic rules <br>&emsp; + Test SSH/HTTP access <br>&emsp; + Apply rules to restrict IP access | 02/03/2026 | 02/03/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Perform integrated labs <br>&emsp; + Deploy EC2 within the created VPC <br>&emsp; + Connect EC2 to the Internet and test access <br>&emsp; + Integrate S3 with EC2 for storage <br> - Troubleshoot issues related to networking and access configuration | 02/04/2026 | 02/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Study **Elastic Load Balancing (ELB)** <br>&emsp; + Concept of load balancing <br>&emsp; + Application Load Balancer (ALB) <br>&emsp; + Network Load Balancer (NLB) <br>&emsp; + Listener and Target Groups <br> - Practice <br>&emsp; + Create a Load Balancer <br>&emsp; + Connect it to EC2 instances <br>&emsp; + Test traffic distribution <br> - Combine with **Auto Scaling Group** for better scalability | 02/05/2026 | 02/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Explore **ElastiCache** <br>&emsp; + Concept of caching and its role in systems <br>&emsp; + Redis and Memcached <br>&emsp; + Real-world use cases of caching <br> - Practice <br>&emsp; + Create cache instance (Redis) <br>&emsp; + Connect and test basic functionality <br>&emsp; + Understand how caching reduces database load | 02/06/2026 | 02/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 4 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Gained a solid understanding of networking in **AWS**:
+  * Understand the structure of a complete **VPC**
+  * Differentiate and deploy Public/Private Subnets
+  * Configure routing using Route Tables
+  * Enable Internet connectivity via Internet Gateway and NAT Gateway
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Mastered security mechanisms:
+  * Clearly distinguish between **Security Groups** and **Network ACLs**
+  * Understand stateful vs stateless behavior
+  * Configure rules to properly control resource access
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Reinforced knowledge through labs:
+  * Deployed EC2 systems within a real VPC environment
+  * Troubleshot network and permission issues
+  * Gained a clear understanding of traffic flow in the system
 
-* Used AWS CLI to perform basic operations such as:
+* Understood load balancing principles:
+  * Use **Load Balancer** to distribute traffic
+  * Combine with **Auto Scaling** for better scalability
+  * Recognize the importance of load balancing in production systems
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Explored **ElastiCache**:
+  * Understand the role of caching in improving performance
+  * Know how to reduce backend database load
+  * Practiced basic cache deployment with Redis
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Improved understanding of system architecture:
+  * VPC → Network foundation
+  * Security Groups/NACLs → Security layer
+  * ELB + Auto Scaling → High availability
+  * ElastiCache → Performance optimization

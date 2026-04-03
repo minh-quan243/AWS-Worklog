@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
+date: 2026-02-09
 weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
@@ -8,42 +8,53 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu tuần 5:
 
-* Tiếp cận mô hình serverless trong AWS.
-* Hiểu cách xây dựng API và kết nối các dịch vụ với nhau.
-* Làm quen với công cụ quản lý hệ thống và triển khai hạ tầng bằng code.
+* Tiếp cận mô hình **serverless** trong AWS và hiểu cách hoạt động của kiến trúc không máy chủ.
+* Hiểu cách xây dựng API và kết nối các dịch vụ trong hệ thống phân tán.
+* Làm quen với các công cụ quản lý hệ thống và truy cập tài nguyên an toàn.
+* Xây dựng tư duy thiết kế hệ thống linh hoạt, dễ mở rộng và giảm chi phí vận hành.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                          | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Tìm hiểu dịch vụ Lambda <br>&emsp; + Khái niệm serverless <br>&emsp; + Cách hoạt động của function <br> - Thực hành tạo và chạy thử Lambda function              | 09/02/2025   | 09/02/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Nghiên cứu API Gateway <br>&emsp; + Tạo REST API <br>&emsp; + Kết nối với Lambda <br> - Thử nghiệm gọi API và nhận phản hồi                                      | 10/02/2025   | 10/02/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Thực hiện các bài lab kết hợp Lambda và API Gateway <br> - Xây dựng một API đơn giản xử lý request và trả về dữ liệu                                             | 11/02/2025   | 11/02/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu Systems Manager Session Manager <br>&emsp; + Quản lý truy cập EC2 không cần SSH <br>&emsp; + Bảo mật kết nối <br> - Thực hành truy cập instance         | 12/02/2025   | 12/02/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - Khám phá AWS CloudFormation <br>&emsp; + Infrastructure as Code <br>&emsp; + Template <br> - Thử viết và triển khai template đơn giản                           | 13/02/2025   | 13/02/2025      | <https://cloudjourney.awsstudygroup.com/> |
+---
+
+### Các công việc đã thực hiện trong tuần:
+
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| 2 | - Tìm hiểu dịch vụ **AWS Lambda** <br>&emsp; + Khái niệm **serverless computing** <br>&emsp; + Cách Lambda function hoạt động (event-driven) <br>&emsp; + Runtime, handler, trigger <br>&emsp; + Giới hạn và pricing cơ bản <br> - Thực hành <br>&emsp; + Tạo Lambda function bằng Node.js/Python <br>&emsp; + Viết logic xử lý đơn giản (return JSON) <br>&emsp; + Test function trực tiếp trên console | 09/02/2026 | 09/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Nghiên cứu dịch vụ **API Gateway** <br>&emsp; + Khái niệm REST API <br>&emsp; + Endpoint, Method (GET, POST, ...) <br>&emsp; + Integration với Lambda <br> - Thực hành <br>&emsp; + Tạo REST API <br>&emsp; + Kết nối API với Lambda function <br>&emsp; + Deploy API và test bằng Postman/browser | 10/02/2026 | 10/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Thực hiện lab tổng hợp **Lambda + API Gateway** <br>&emsp; + Xây dựng API xử lý request (ví dụ: trả về dữ liệu JSON) <br>&emsp; + Xử lý input/output giữa client và Lambda <br>&emsp; + Debug lỗi khi integration <br> - Hiểu luồng hoạt động: Client → API Gateway → Lambda → Response | 11/02/2026 | 11/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Tìm hiểu **AWS Systems Manager (Session Manager)** <br>&emsp; + Khái niệm quản lý instance không cần SSH <br>&emsp; + Lợi ích về bảo mật (không cần mở port 22) <br>&emsp; + IAM role cho EC2 <br> - Thực hành <br>&emsp; + Cấu hình Session Manager <br>&emsp; + Truy cập EC2 instance thông qua browser/CLI <br>&emsp; + So sánh với phương pháp SSH truyền thống | 12/02/2026 | 12/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Khám phá **AWS CloudFormation** <br>&emsp; + Khái niệm **Infrastructure as Code (IaC)** <br>&emsp; + Template (YAML/JSON) <br>&emsp; + Stack và lifecycle <br> - Thực hành <br>&emsp; + Viết template đơn giản (tạo S3/EC2) <br>&emsp; + Deploy stack từ template <br>&emsp; + Update và delete stack <br>&emsp; + Quan sát quá trình provisioning tự động | 13/02/2026 | 13/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 ---
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu được mô hình serverless:
-  * Nắm cách hoạt động của AWS Lambda
-  * Tạo và triển khai function xử lý logic đơn giản
+* Hiểu rõ mô hình **serverless**:
+  * Nắm được cách hoạt động của **AWS Lambda**
+  * Hiểu mô hình event-driven
+  * Biết cách triển khai function xử lý logic backend
 
-* Biết cách xây dựng API:
-  * Sử dụng API Gateway để tạo endpoint
+* Xây dựng được API cơ bản:
+  * Sử dụng **API Gateway** để tạo endpoint
   * Kết nối API với Lambda để xử lý request
+  * Hiểu rõ luồng request/response trong hệ thống serverless
 
-* Hoàn thành các lab thực hành:
-  * Triển khai API cơ bản
-  * Hiểu luồng xử lý giữa client và backend serverless
+* Hoàn thành lab thực hành:
+  * Triển khai API hoàn chỉnh (client → API → Lambda)
+  * Debug và xử lý lỗi integration
+  * Tăng khả năng đọc log và troubleshooting
 
-* Làm quen với Systems Manager:
-  * Truy cập EC2 thông qua Session Manager
-  * Tăng cường bảo mật so với SSH truyền thống
+* Làm quen với **Systems Manager**:
+  * Truy cập EC2 thông qua **Session Manager**
+  * Giảm phụ thuộc vào SSH và key pair
+  * Tăng mức độ bảo mật hệ thống
 
-* Tiếp cận CloudFormation:
-  * Hiểu khái niệm Infrastructure as Code
-  * Bước đầu triển khai hạ tầng bằng template
+* Tiếp cận **CloudFormation (IaC)**:
+  * Hiểu lợi ích của việc triển khai hạ tầng bằng code
+  * Viết và deploy template cơ bản
+  * Nhận thức được khả năng tự động hóa và tái sử dụng hạ tầng
 
-* Có cái nhìn rõ hơn về cách xây dựng hệ thống AWS theo hướng tự động hóa, linh hoạt và dễ mở rộng.
-* ...
+* Hiểu rõ hơn về kiến trúc hiện đại:
+  * API Gateway + Lambda → Serverless backend
+  * IAM + Session Manager → Secure access
+  * CloudFormation → Automated infrastructure

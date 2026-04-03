@@ -1,57 +1,63 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 8 Worklog"
+date: 2026-03-02
+weight: 8
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 8 Objectives:
 
-### Week 1 Objectives:
+* Explore **advanced security services in AWS**.
+* Understand how to protect systems, data, and applications in the cloud.
+* Get familiar with tools for access control, encryption, and security monitoring.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **AWS Security Hub** <br>&emsp; + Overview of security compliance <br>&emsp; + Integration with other security services <br>&emsp; + Security standards (CIS, AWS Foundational Security Best Practices) <br> - Explore **VPC Endpoint (S3 Gateway Endpoint)** <br>&emsp; + Private access to S3 without Internet <br> - Practice <br>&emsp; + Enable Security Hub <br>&emsp; + Configure VPC Endpoint for S3 <br>&emsp; + Test private access | 03/02/2026 | 03/02/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Study **AWS WAF (Web Application Firewall)** <br>&emsp; + Concept of web application protection <br>&emsp; + Web ACL and Rules <br>&emsp; + Rule types (IP match, rate limit, managed rules) <br> - Practice <br>&emsp; + Create Web ACL <br>&emsp; + Apply rules to block IPs or abnormal requests <br>&emsp; + Integrate with CloudFront/ALB | 03/03/2026 | 03/03/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Study **AWS KMS (Key Management Service)** <br>&emsp; + Encryption concepts (at rest, in transit) <br>&emsp; + Customer Managed Key vs AWS Managed Key <br>&emsp; + Key rotation <br> - Practice <br>&emsp; + Create KMS key <br>&emsp; + Apply encryption to S3 or EBS <br>&emsp; + Verify key access permissions | 03/04/2026 | 03/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Explore **AWS Secrets Manager** <br>&emsp; + Manage credentials (DB password, API keys) <br>&emsp; + Automatic rotation <br> - Study **AWS Firewall Manager** <br>&emsp; + Centralized security policy management <br> - Practice <br>&emsp; + Store secrets <br>&emsp; + Retrieve secrets from applications <br>&emsp; + Configure basic policies | 03/05/2026 | 03/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Study **Amazon Cognito** <br>&emsp; + Authentication vs Authorization <br>&emsp; + User Pools and Identity Pools <br>&emsp; + JWT tokens <br> - Practice <br>&emsp; + Create User Pool <br>&emsp; + Register and log in users <br>&emsp; + Test basic authentication for applications | 03/06/2026 | 03/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 8 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Gained a strong understanding of overall security tools:
+  * Use **Security Hub** to monitor and assess security posture
+  * Apply security standards and detect system vulnerabilities
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Learned how to configure private access:
+  * Use **VPC Endpoint** to access S3 internally
+  * Reduce risks of exposing resources to the Internet
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Got familiar with application protection:
+  * Configure **AWS WAF** to filter requests
+  * Understand how to mitigate common attacks (DDoS, injection, brute force)
 
-* Used AWS CLI to perform basic operations such as:
+* Mastered data encryption mechanisms:
+  * Use **KMS** to manage encryption keys
+  * Apply encryption to stored data
+  * Understand the role of encryption in system security
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Managed sensitive information:
+  * Use **Secrets Manager** to store credentials
+  * Apply best practice of not hardcoding secrets
+  * Understand how rotation improves security
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Explored user authentication:
+  * Use **Cognito** for user management
+  * Understand authentication and authorization processes
+  * Get familiar with token-based authentication
+
+* Improved understanding of AWS security architecture:
+  * IAM → Identity control
+  * WAF → Application protection
+  * KMS → Encryption
+  * Secrets Manager → Secret management
+  * Cognito → User authentication

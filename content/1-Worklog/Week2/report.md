@@ -1,57 +1,62 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 2 Worklog"
+date: 2026-01-19
+weight: 2
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 2 Objectives:
 
-### Week 1 Objectives:
+* Continue deepening knowledge of core **AWS** services.
+* Clearly understand how to deploy and configure real-world resources on the cloud.
+* Learn how services integrate and support each other within a system.
+* Improve hands-on skills with popular services such as **EC2**, **S3**, **CloudWatch**, and **RDS**.
+* Get initial exposure to monitoring and managing resources on AWS.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **EC2 (Elastic Compute Cloud)** <br>&emsp; + Concept of virtual machines on the cloud <br>&emsp; + Instance types (t2, t3, ...) and their use cases <br>&emsp; + AMI (Amazon Machine Image) <br>&emsp; + Security Groups and firewall mechanisms <br> - Practice launching EC2 instances <br>&emsp; + Select appropriate instance type (Free Tier) <br>&emsp; + Configure key pair for SSH <br>&emsp; + Connect to instance via SSH | 01/19/2026 | 01/19/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Review **IAM** knowledge <br>&emsp; + Review Users, Groups, Policies <br>&emsp; + Recheck access control principles <br> - Practice EC2 again <br>&emsp; + Create and manage multiple instances <br>&emsp; + Configure Security Groups for each instance <br> - Combine **IAM with EC2** <br>&emsp; + Use IAM Users to access resources <br>&emsp; + Understand instance-level access control | 01/20/2026 | 01/20/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Study **S3 (Simple Storage Service)** <br>&emsp; + Concepts of Bucket and Object <br>&emsp; + Storage classes (Standard, IA, Glacier, ...) <br>&emsp; + Bucket naming rules <br> - Practice with S3 <br>&emsp; + Create buckets <br>&emsp; + Upload/download files <br>&emsp; + Configure access permissions (public/private) <br>&emsp; + Explore data management interface | 01/21/2026 | 01/21/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Study **CloudWatch** <br>&emsp; + Concept of monitoring in cloud <br>&emsp; + Metrics, Logs, Alarms <br>&emsp; + Role of CloudWatch in system operations <br> - Practice <br>&emsp; + Monitor EC2 instance status <br>&emsp; + Observe CPU, Network, Disk metrics <br>&emsp; + Create basic alarms | 01/22/2026 | 01/22/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Study **RDS (Relational Database Service)** <br>&emsp; + Supported databases (MySQL, PostgreSQL, ...) <br>&emsp; + Concept of managed database <br>&emsp; + Basic configuration (instance class, storage, security) <br> - Practice deploying RDS <br>&emsp; + Create database instance <br>&emsp; + Configure Security Groups for connection <br>&emsp; + Connect to database from local/EC2 <br>&emsp; + Test operation and basic queries | 01/23/2026 | 01/23/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 2 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Gained a deeper understanding of **EC2**:
+  * Know how to choose the right instance type for specific needs
+  * Understand the process of launching and configuring virtual machines
+  * Confident in connecting to instances via SSH
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Reinforced and applied **IAM** knowledge:
+  * Applied access control when working with EC2
+  * Better understanding of security and access management
+  * Avoided using the root account in practical tasks
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Mastered basic operations with **S3**:
+  * Create and manage buckets
+  * Upload, download, and organize data
+  * Understand data access control mechanisms
 
-* Used AWS CLI to perform basic operations such as:
+* Learned how to use **CloudWatch**:
+  * Monitor resource status and performance
+  * Read and understand basic metrics
+  * Set up alerts for system monitoring
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Explored **RDS**:
+  * Understand the concept of managed database services
+  * Successfully deploy database instances
+  * Connect to and test database operations
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood service integration:
+  * EC2 + IAM → Access management and security
+  * EC2 + S3 → Data storage and processing
+  * EC2 + CloudWatch → System monitoring
+  * EC2 + RDS → Building a complete backend system

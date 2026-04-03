@@ -1,57 +1,61 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 10 Worklog"
+date: 2026-03-16
+weight: 10
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 10 Objectives:
 
-### Week 1 Objectives:
+* Deploy a **complete real-world project on AWS**.
+* Apply learned services to build an end-to-end system.
+* Get familiar with the full process:
+  * System architecture design
+  * Deployment
+  * Testing
+  * Evaluation and optimization
+* Start building a system based on **serverless + event-driven architecture**.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Analyze project requirements <br>&emsp; + Define system input/output <br>&emsp; + Design data processing flow <br> - Propose serverless architecture <br>&emsp; + S3 → Lambda → SQS → Transcribe → DynamoDB <br> - Identify required AWS services | 03/16/2026 | 03/16/2026 | |
+| Tue | - Set up **IAM** <br>&emsp; + Create roles for Lambda and services <br>&emsp; + Apply principle of least privilege <br> - Create **S3 bucket** <br>&emsp; + Configure audio file uploads <br> - Initialize **DynamoDB** <br>&emsp; + Design table for metadata and results | 03/17/2026 | 03/17/2026 | |
+| Wed | - Build **Lambda functions** <br>&emsp; + Handle events from S3 <br>&emsp; + Send messages to SQS <br> - Create **API Gateway** <br>&emsp; + Expose endpoint for querying results <br> - Configure triggers <br>&emsp; + S3 → Lambda <br>&emsp; + Lambda → SQS | 03/18/2026 | 03/18/2026 | |
+| Thu | - Integrate **AWS Transcribe** <br>&emsp; + Convert audio to text <br> - Combine with **SQS** <br>&emsp; + Handle asynchronous message processing <br>&emsp; + Avoid system blocking <br> - Store results in DynamoDB | 03/19/2026 | 03/19/2026 | |
+| Fri | - Test the system <br>&emsp; + Upload audio files → verify pipeline <br>&emsp; + Validate API responses <br> - Debug and optimize <br>&emsp; + Check CloudWatch logs <br>&emsp; + Adjust timeout and permissions <br> - Evaluate performance and finalize system | 03/20/2026 | 03/20/2026 | |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 10 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Designed system architecture:
+  * S3 → triggers Lambda
+  * Lambda → sends messages via SQS
+  * SQS → handles asynchronous processing
+  * Transcribe → processes audio
+  * DynamoDB → stores results
+  * API Gateway → provides endpoints
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Applied security best practices:
+  * Used IAM roles appropriately
+  * Avoided hardcoding credentials
+  * Controlled access between services
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Built a serverless backend:
+  * Implemented Lambda functions for business logic
+  * Created APIs for querying data
 
-* Used AWS CLI to perform basic operations such as:
+* Understood system data flow:
+  * Event-driven processing
+  * Asynchronous workflows
+  * Decoupling between components
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Performed system testing:
+  * Tested with real data (audio files)
+  * Debugged issues using CloudWatch logs
+  * Optimized configurations for stable performance

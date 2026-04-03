@@ -1,57 +1,60 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 5 Worklog"
+date: 2026-02-09
+weight: 5
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 5 Objectives:
 
-### Week 1 Objectives:
+* Get introduced to the **serverless** model in AWS and understand how serverless architecture works.
+* Learn how to build APIs and connect services in distributed systems.
+* Get familiar with system management tools and secure resource access.
+* Develop a mindset for designing flexible, scalable, and cost-efficient systems.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **AWS Lambda** <br>&emsp; + Concept of **serverless computing** <br>&emsp; + How Lambda functions work (event-driven) <br>&emsp; + Runtime, handler, trigger <br>&emsp; + Basic limits and pricing <br> - Practice <br>&emsp; + Create Lambda functions using Node.js/Python <br>&emsp; + Implement simple logic (return JSON) <br>&emsp; + Test functions directly in the console | 02/09/2026 | 02/09/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Study **API Gateway** <br>&emsp; + Concept of REST API <br>&emsp; + Endpoints, Methods (GET, POST, ...) <br>&emsp; + Integration with Lambda <br> - Practice <br>&emsp; + Create REST API <br>&emsp; + Connect API to Lambda function <br>&emsp; + Deploy API and test via Postman/browser | 02/10/2026 | 02/10/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Perform integrated lab **Lambda + API Gateway** <br>&emsp; + Build API to handle requests (e.g., return JSON data) <br>&emsp; + Handle input/output between client and Lambda <br>&emsp; + Debug integration issues <br> - Understand workflow: Client → API Gateway → Lambda → Response | 02/11/2026 | 02/11/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Study **AWS Systems Manager (Session Manager)** <br>&emsp; + Concept of managing instances without SSH <br>&emsp; + Security benefits (no need to open port 22) <br>&emsp; + IAM roles for EC2 <br> - Practice <br>&emsp; + Configure Session Manager <br>&emsp; + Access EC2 via browser/CLI <br>&emsp; + Compare with traditional SSH access | 02/12/2026 | 02/12/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Explore **AWS CloudFormation** <br>&emsp; + Concept of **Infrastructure as Code (IaC)** <br>&emsp; + Templates (YAML/JSON) <br>&emsp; + Stack and lifecycle <br> - Practice <br>&emsp; + Write simple templates (create S3/EC2) <br>&emsp; + Deploy stacks from templates <br>&emsp; + Update and delete stacks <br>&emsp; + Observe automated provisioning process | 02/13/2026 | 02/13/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 5 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Gained a clear understanding of the **serverless** model:
+  * Understand how **AWS Lambda** works
+  * Grasp the event-driven model
+  * Able to deploy backend logic using Lambda functions
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Built basic APIs:
+  * Use **API Gateway** to create endpoints
+  * Integrate APIs with Lambda for request handling
+  * Understand request/response flow in serverless systems
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Completed hands-on labs:
+  * Deployed a complete API (Client → API → Lambda)
+  * Debugged and resolved integration issues
+  * Improved log reading and troubleshooting skills
 
-* Used AWS CLI to perform basic operations such as:
+* Got familiar with **Systems Manager**:
+  * Access EC2 using **Session Manager**
+  * Reduce dependency on SSH and key pairs
+  * Improve system security
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Explored **CloudFormation (IaC)**:
+  * Understand benefits of infrastructure as code
+  * Write and deploy basic templates
+  * Recognize automation and reusability advantages
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Improved understanding of modern architecture:
+  * API Gateway + Lambda → Serverless backend
+  * IAM + Session Manager → Secure access
+  * CloudFormation → Automated infrastructure

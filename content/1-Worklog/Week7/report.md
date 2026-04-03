@@ -1,57 +1,61 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 7 Worklog"
+date: 2026-02-23
+weight: 7
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 7 Objectives:
 
-### Week 1 Objectives:
+* Explore advanced **AWS** tools for system development and management.
+* Understand how to optimize resources and costs in a cloud environment.
+* Improve system monitoring and network analysis skills.
+* Strengthen knowledge of advanced security and access control.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **AWS CDK (Cloud Development Kit)** <br>&emsp; + Advanced Infrastructure as Code concepts <br>&emsp; + CDK Constructs and Stacks <br>&emsp; + Compare CDK with CloudFormation <br> - Practice <br>&emsp; + Set up CDK environment (Node.js/Python) <br>&emsp; + Write code to create resources (S3/EC2) <br>&emsp; + Deploy stacks using CDK CLI | 02/23/2026 | 02/23/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Study **EC2 optimization** <br>&emsp; + Concept of **Right-Sizing** <br>&emsp; + Monitor CPU and Memory usage <br>&emsp; + Choose appropriate instance types for workloads <br> - Practice <br>&emsp; + Analyze metrics in CloudWatch <br>&emsp; + Adjust instance types <br>&emsp; + Compare performance and cost before/after optimization | 02/24/2026 | 02/24/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Perform network monitoring lab <br>&emsp; + Study **VPC Flow Logs** <br>&emsp; + Configure logging for VPC/Subnet <br>&emsp; + Analyze traffic logs <br> - Practice <br>&emsp; + Test connectivity between EC2 instances <br>&emsp; + Detect and troubleshoot network issues | 02/25/2026 | 02/25/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Study **Service Quotas** <br>&emsp; + Default AWS limits <br>&emsp; + Request quota increases <br> - Study **Cost Management** <br>&emsp; + AWS Cost Explorer <br>&emsp; + Monitor and analyze costs <br>&emsp; + Set up budget alerts | 02/26/2026 | 02/26/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Explore advanced **IAM** <br>&emsp; + Advanced IAM Policies <br>&emsp; + Conditions in policies <br>&emsp; + Resource-based vs Identity-based policies <br> - Practice <br>&emsp; + Write policies with conditions (IP, time, MFA) <br>&emsp; + Test and validate access permissions <br>&emsp; + Apply to real-world scenarios | 02/27/2026 | 02/27/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 7 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Got familiar with **AWS CDK**:
+  * Understand how to define infrastructure using code (advanced IaC)
+  * Deploy AWS resources through programming
+  * Recognize the benefits of automation in system deployment
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Learned how to optimize **EC2** resources:
+  * Evaluate performance based on metrics
+  * Apply **right-sizing** to reduce costs
+  * Understand the relationship between performance and cost
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Practiced network monitoring:
+  * Use **VPC Flow Logs** to track traffic
+  * Analyze traffic between system components
+  * Support troubleshooting of network issues
 
-* Used AWS CLI to perform basic operations such as:
+* Understood cost and quota management:
+  * Use **Cost Explorer** to monitor usage
+  * Set up budget alerts
+  * Recognize the importance of cost control in cloud environments
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Enhanced knowledge of **IAM**:
+  * Build policies with specific conditions
+  * Apply fine-grained access control (IP, time, MFA)
+  * Understand advanced security principles
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Improved understanding of system operations:
+  * Monitoring → CloudWatch, Flow Logs
+  * Cost → Budget, Cost Explorer
+  * Security → Advanced IAM
+  * Automation → CDK

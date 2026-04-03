@@ -1,57 +1,62 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 6 Worklog"
+date: 2026-02-16
+weight: 6
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 6 Objectives:
 
-### Week 1 Objectives:
+* Review and consolidate all learned **AWS** services.
+* Strengthen hands-on skills through integrated lab exercises.
+* Gain a deeper understanding of how services work together in real-world systems.
+* Reinforce cloud system design thinking (network, compute, storage, serverless).
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Review **EC2** <br>&emsp; + Instance creation and configuration process <br>&emsp; + Key Pair, Security Group, AMI <br>&emsp; + Common connection issues <br> - Practice <br>&emsp; + Redeploy EC2 instance from scratch <br>&emsp; + Configure SSH access <br>&emsp; + Check instance status and basic monitoring | 02/16/2026 | 02/16/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Review **VPC and Networking** <br>&emsp; + Subnets (Public/Private) <br>&emsp; + Route Tables <br>&emsp; + Internet Gateway, NAT Gateway <br> - Practice <br>&emsp; + Rebuild a complete VPC <br>&emsp; + Deploy EC2 across different subnets <br>&emsp; + Test connectivity between components | 02/17/2026 | 02/17/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Review **AWS Lambda** <br>&emsp; + Function structure <br>&emsp; + Triggers and events <br>&emsp; + Logging and debugging <br> - Practice <br>&emsp; + Write Lambda functions for simple logic <br>&emsp; + Integrate with API Gateway for testing <br>&emsp; + Check logs in CloudWatch | 02/18/2026 | 02/18/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Review **S3 (Simple Storage Service)** <br>&emsp; + Bucket and Object <br>&emsp; + Permissions (IAM Policy, Bucket Policy) <br>&emsp; + Public vs Private access <br> - Practice <br>&emsp; + Create new bucket <br>&emsp; + Upload and manage files <br>&emsp; + Configure data access permissions | 02/19/2026 | 02/19/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Review **CloudFront** <br>&emsp; + CDN and caching mechanisms <br>&emsp; + Distribution and Origin <br> - Practice <br>&emsp; + Create CloudFront distribution <br>&emsp; + Connect S3 as origin <br>&emsp; + Test access speed and caching <br> - Summarize all knowledge learned over 6 weeks | 02/20/2026 | 02/20/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 6 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Reinforced knowledge of **EC2**:
+  * Confident in creating and managing instances
+  * Clear understanding of key configurations (Security Groups, Key Pair)
+  * Able to troubleshoot basic connection issues
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Strengthened understanding of **VPC and Networking**:
+  * Understand how to design networks with Public/Private Subnets
+  * Configure routing and Internet connectivity
+  * Clearly understand traffic flow in the system
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Mastered **Lambda** again:
+  * Write and deploy basic functions
+  * Integrate with API Gateway to build APIs
+  * Use CloudWatch for debugging and log monitoring
 
-* Used AWS CLI to perform basic operations such as:
+* Improved skills with **S3**:
+  * Efficiently manage buckets and objects
+  * Configure proper access permissions
+  * Understand data security considerations
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Gained deeper understanding of **CloudFront**:
+  * Deploy CDN for static content
+  * Clearly observe performance improvements
+  * Understand caching and content delivery mechanisms
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Consolidated system knowledge:
+  * EC2 → Compute
+  * VPC → Networking
+  * S3 → Storage
+  * Lambda → Serverless
+  * CloudFront → CDN

@@ -1,57 +1,57 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
-weight: 1
+title: "Worklog Tuần 11"
+date: 2026-03-23
+weight: 11
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu tuần 11:
 
-### Mục tiêu tuần 1:
+* Tiếp tục phát triển dự án theo hướng **fullstack application** trên AWS.
+* Triển khai hạ tầng thực tế với EC2 và cấu hình mạng phù hợp.
+* Tập trung xây dựng **backend service** và bắt đầu phát triển **frontend**.
+* Kết nối các thành phần để hình thành hệ thống hoàn chỉnh hơn.
+* Làm quen với quy trình phát triển ứng dụng thực tế trên cloud.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+---
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc đã thực hiện trong tuần:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| 2 | - Triển khai **EC2 instance** <br>&emsp; + Lựa chọn instance phù hợp (t2.micro / free tier) <br>&emsp; + Cấu hình security group (SSH, HTTP) <br> - Thiết lập **VPC và Subnet** <br>&emsp; + Public subnet cho EC2 <br>&emsp; + Route Internet Gateway <br> - Chuẩn bị môi trường <br>&emsp; + Cài đặt Python, pip, virtual environment <br>&emsp; + Thiết lập môi trường chạy ứng dụng | 23/03/2026 | 23/03/2026 |  |
+| 3 | - Bắt đầu phát triển **backend bằng Python** <br>&emsp; + Xây dựng cấu trúc project (MVC hoặc modular) <br>&emsp; + Tạo API cơ bản (RESTful) <br> - Phát triển các module xử lý logic <br>&emsp; + Xử lý request/response <br>&emsp; + Kết nối database <br> - Test API bằng Postman | 24/03/2026 | 24/03/2026 |  |
+| 4 | - Hoàn thiện backend <br>&emsp; + Xây dựng chức năng **chat cơ bản** <br>&emsp; + Xử lý gửi/nhận message <br> - Kiểm tra kết nối giữa các thành phần <br>&emsp; + API ↔ Database <br>&emsp; + Backend ↔ Client | 25/03/2026 | 25/03/2026 | > |
+| 5 | - Mở rộng hệ thống chat <br>&emsp; + Lưu trữ lịch sử trò chuyện <br>&emsp; + Thiết kế schema dữ liệu <br>&emsp; + Tối ưu truy vấn (query performance) <br> - Kiểm tra và tối ưu backend <br>&emsp; + Xử lý lỗi <br>&emsp; + Logging cơ bản | 26/03/2026 | 26/03/2026 |  |
+| 6 | - Tìm hiểu **Amazon Cognito** <br>&emsp; + Authentication (Sign up / Login) <br>&emsp; + User Pool <br> - Làm quen với **AWS Amplify** <br>&emsp; + Triển khai frontend <br>&emsp; + Hosting đơn giản <br> - Kết nối frontend với backend <br>&emsp; + Gọi API <br>&emsp; + Test end-to-end flow | 27/03/2026 | 27/03/2026 |  |
 
-### Kết quả đạt được tuần 1:
+---
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả đạt được tuần 11:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Triển khai thành công hạ tầng:
+  * Thiết lập **EC2, VPC, Subnet, Security Group**
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Xây dựng backend hoàn chỉnh:
+  * Phát triển API bằng Python
+  * Xử lý logic nghiệp vụ của hệ thống
+  * Kết nối database để lưu trữ dữ liệu
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Triển khai hệ thống chat cơ bản:
+  * Gửi và nhận message giữa client và server
+  * Đảm bảo luồng xử lý dữ liệu hoạt động ổn định
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Mở rộng tính năng:
+  * Lưu trữ lịch sử trò chuyện
+  * Tối ưu truy vấn và cấu trúc dữ liệu
+  * Cải thiện hiệu năng backend
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Bắt đầu phát triển frontend:
+  * Sử dụng **Cognito** để quản lý người dùng
+  * Triển khai giao diện với **Amplify**
+  * Kết nối frontend với backend thông qua API
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hoàn thiện hệ thống end-to-end:
+  * Frontend → API → Backend → Database
+  * Người dùng có thể tương tác với hệ thống thực tế

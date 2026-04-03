@@ -1,57 +1,61 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 3 Worklog"
+date: 2026-01-26
+weight: 3
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 3 Objectives:
 
-### Week 1 Objectives:
+* Expand knowledge of advanced **AWS** services.
+* Understand how to build scalable systems and optimize performance.
+* Get familiar with services related to content delivery and routing.
+* Get introduced to automation tools such as **AWS CLI**.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Study **Route 53** <br>&emsp; + Concept of **DNS** and domain name resolution <br>&emsp; + Hosted Zones (Public/Private) <br>&emsp; + Record types (A, CNAME, NS, ...) <br>&emsp; + Routing policies (Simple, Weighted, Latency, ...) <br> - Practice <br>&emsp; + Create Hosted Zones <br>&emsp; + Configure domain routing to resources (EC2/S3) <br>&emsp; + Test domain resolution | 01/26/2026 | 01/26/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Tue | - Review **EC2** and foundational knowledge <br> - Study **Auto Scaling** <br>&emsp; + Scaling concepts (vertical vs horizontal) <br>&emsp; + Launch Template/Configuration <br>&emsp; + Auto Scaling Group (ASG) <br> - Practice Auto Scaling deployment <br>&emsp; + Create Launch Template <br>&emsp; + Create Auto Scaling Group <br>&emsp; + Configure scaling policy based on CPU <br>&emsp; + Test automatic scaling behavior | 01/27/2026 | 01/27/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed | - Get familiar with **AWS CLI** <br>&emsp; + Install AWS CLI on local machine <br>&emsp; + Configure credentials (Access Key, Secret Key) <br>&emsp; + Understand CLI command structure <br> - Practice <br>&emsp; + Create, list, delete resources (EC2, S3) via CLI <br>&emsp; + Compare CLI vs Console operations <br>&emsp; + Understand benefits of automation and scripting | 01/28/2026 | 01/28/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - Study **DynamoDB** <br>&emsp; + Concept of NoSQL database <br>&emsp; + Table, Item, Attribute <br>&emsp; + Primary Key (Partition key, Sort key) <br>&emsp; + Advantages in performance and scalability <br> - Practice <br>&emsp; + Create DynamoDB table <br>&emsp; + Insert, update, delete data <br>&emsp; + Perform basic queries | 01/29/2026 | 01/29/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Study **CloudFront** <br>&emsp; + Concept of **CDN (Content Delivery Network)** <br>&emsp; + Edge locations and caching <br>&emsp; + Distribution types (Web/RTMP) <br> - Practice <br>&emsp; + Create CloudFront distribution <br>&emsp; + Connect S3/EC2 as origin <br>&emsp; + Test access speed and caching <br>&emsp; + Compare performance with and without CDN | 01/30/2026 | 01/30/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 3 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Gained a solid understanding of **Route 53**:
+  * Understand how DNS works
+  * Know how to configure domains and basic record types
+  * Understand traffic routing mechanisms
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Successfully applied **Auto Scaling**:
+  * Deployed Auto Scaling Groups for EC2
+  * Understand how systems automatically scale based on load
+  * Recognize the importance of scaling in real-world systems
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Got familiar with **AWS CLI**:
+  * Managed resources using command line
+  * Better understanding of automation and scripting
+  * Compared advantages and disadvantages of CLI vs Console
 
-* Used AWS CLI to perform basic operations such as:
+* Explored **DynamoDB**:
+  * Understand NoSQL database model
+  * Practiced creating tables and managing data
+  * Recognized differences between NoSQL and relational databases
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Learned principles of **CloudFront**:
+  * Understand how CDN reduces latency and improves performance
+  * Deployed content distribution via edge locations
+  * Observed benefits of caching in web systems
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Improved understanding of AWS architecture:
+  * Route 53 → Domain routing
+  * CloudFront → Content acceleration
+  * EC2 + Auto Scaling → Flexible load handling
+  * DynamoDB → High-performance data storage

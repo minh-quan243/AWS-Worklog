@@ -1,57 +1,53 @@
 ---
-title: "Week 1 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 12 Worklog"
+date: 2026-03-29
+weight: 12
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 12 Objectives:
 
-### Week 1 Objectives:
+* Finalize and deploy the project to a production-like environment.
+* Optimize the system for performance and AWS cost efficiency.
+* Prepare complete technical documentation and reports.
+* Summarize the entire internship journey and finalize personal portfolio.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | End Date | Resources |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------- |
+| Mon | - Push source code to **GitHub** <br>&emsp; + Reorganize project structure (backend, frontend, docs) <br>&emsp; + Write clear commit messages <br> - Set up connection with cloud environment <br>&emsp; + Sync code and verify deployment <br>&emsp; + Ensure system runs from the latest source | 03/29/2026 | 03/29/2026 | |
+| Tue | - Finalize and optimize APIs <br>&emsp; + Improve request/response handling <br>&emsp; + Handle errors and exceptions <br> - Evaluate AWS costs <br>&emsp; + Check usage of EC2, S3, DynamoDB <br>&emsp; + Analyze cost by service <br> - Optimize system <br>&emsp; + Shut down unnecessary resources <br>&emsp; + Adjust configurations appropriately | 03/30/2026 | 03/30/2026 | |
+| Wed | - Write **README.md** for the project <br>&emsp; + System description <br>&emsp; + Setup and usage guide <br>&emsp; + AWS architecture description <br> - Prepare **proposal** <br>&emsp; + Architecture diagram <br>&emsp; + Data flow <br>&emsp; + Explanation of technology choices | 03/31/2026 | 03/31/2026 | |
+| Thu | - Compile full **worklog (Week 1 → 12)** <br>&emsp; + Standardize format <br>&emsp; + Ensure logical and clear content <br> - Review content <br>&emsp; + Check for spelling errors <br>&emsp; + Ensure completeness | 04/01/2026 | 04/01/2026 | |
+| Fri | - Perform final system check <br>&emsp; + End-to-end testing (frontend → backend → database) <br>&emsp; + Verify authentication (Cognito) <br>&emsp; + Check logging (CloudWatch) <br> - Finalize report <br>&emsp; + Package documentation <br>&emsp; + Submit as required | 04/02/2026 | 04/02/2026 | |
 
-### Week 1 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 12 Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Completed project deployment:
+  * Source code managed on **GitHub**
+  * System runs stably on cloud environment
+  * Can be redeployed from source at any time
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Optimized system:
+  * APIs are more efficient and stable
+  * Reduced costs through resource optimization
+  * Gained clear understanding of AWS cost management
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Completed documentation:
+  * Full README (setup, usage, architecture)
+  * Detailed proposal describing the system
+  * Ready to be used as portfolio material
 
-* Used AWS CLI to perform basic operations such as:
+* Summarized internship journey:
+  * Completed worklog from Week 1 → 12
+  * Clearly demonstrated learning and development process
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Tested and finalized system:
+  * Performed full end-to-end testing
+  * Ensured all main functionalities work reliably
