@@ -1,7 +1,7 @@
 ---
 title : "Điều kiện tiên quyết"
-date: "2026-01-11" 
-weight : 2 
+date: "2000-01-01" 
+weight: 2
 chapter : false
 pre : " <b> 4.2. </b> "
 ---

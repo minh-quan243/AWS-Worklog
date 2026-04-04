@@ -1,7 +1,7 @@
 ---
 title : "Prerequisites"
-date: "2026-01-11" 
-weight : 1 
+date: "2000-01-01" 
+weight: 2
 chapter : false
 pre : " <b> 4.2. </b> "
 ---
@@ -18,13 +18,6 @@ Before starting the workshop, make sure you have the following in place:
 #### IAM Permissions
 
 Your IAM user must have permissions to create and manage all services used in this workshop. Attach the following policy to your user or role before proceeding.
-
-{{% notice warning %}}
-⚠️ The policy below grants broad permissions scoped to the services used in this workshop. In a production environment, always follow the principle of least privilege and restrict permissions to specific resources.
-{{% /notice %}}
-
-![Required IAM Permissions](/images/workshop/2-prerequisites/iam-permissions.png)
-
 The policy must cover the following services and actions:
 
 | Service | Required Actions |
@@ -81,5 +74,5 @@ The policy must cover the following services and actions:
 #### Region
 
 {{% notice info %}}
-All resources in this workshop must be created in **ap-southeast-1 (Singapore)**. Make sure the correct region is selected in the AWS Console top-right region selector before starting each section.
+All resources in this workshop must be created in **ap-southeast-1 (Singapore)**.
 {{% /notice %}}
