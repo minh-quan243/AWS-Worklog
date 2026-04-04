@@ -1,9 +1,9 @@
 ---
 title: "Feedback and Suggestions"
 date: "2026-01-11"
-weight: 7
+weight: 6
 chapter: false
-pre: " <b> 7. </b> "
+pre: " <b> 6. </b> "
 ---
 
 ### General Evaluation

@@ -1,87 +1,40 @@
 ---
-title: "Các events đã tham gia"
-date: "2000-01-01"
-weight: 04
+title: "Các sự kiện đã tham gia"
+date: "2026-01-11"
+weight: 03
 chapter: false
-pre: " <b> 4. </b> "
+pre: " <b> 3. </b> "
 ---
 
+Trong suốt quá trình thực tập, mình đã có cơ hội tham gia bảy sự kiện khác nhau. Mỗi sự kiện đều mang lại những trải nghiệm đáng giá, giúp mình mở rộng kiến thức, tiếp cận những công nghệ mới, đồng thời ghi lại nhiều kỷ niệm và khoảnh khắc ý nghĩa.
 
+### [Sự kiện 1](3.1-Event1/)
+&emsp;**Tên sự kiện:** AWS re:Invent 2025 Recap (Vietnam)  
 
-Trong quá trình thực tập, mình đã tham gia bảy sự kiện. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, mang lại nhiều kiến thức mới, thú vị và hữu ích, cùng với những phần quà và khoảnh khắc tuyệt vời.
+&emsp;**Thời gian:** 09:00, ngày 27 tháng 01 năm 2026  
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** Vietnam Cloud Day 2025 : Ho Chi Minh City Connect Edition for Builders: Gen AI and Data track
+&emsp;**Địa điểm:** AWS Vietnam Office (Tầng 26 & 36), Thành phố Hồ Chí Minh  
 
-&emsp;**Thời gian:** 08:30, ngày 18 tháng 9 năm 2025
-
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
-
-&emsp;**Vai trò:** Người tham dự
-
----
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** AI-Driven Development Life Cycle: Reimagining Software Engineering
-
-&emsp;**Thời gian:** 09:00, ngày 3 tháng 10 năm 2025
-
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
-
-&emsp;**Vai trò:** Người tham dự
+&emsp;**Vai trò:** Người tham dự (FCJ Cloud Intern)
 
 ---
 
-### [Event 3](4.3-Event3/)
-&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS
+### [Sự kiện 2](3.2-Event2/)
+&emsp;**Tên sự kiện:** AI Agents, Prompt Engineering, and AIoT Projects on AWS  
 
-&emsp;**Thời gian:** 08:30, ngày 15 tháng 11 năm 2025
+&emsp;**Thời gian:** 09:00, ngày 14 tháng 03 năm 2026  
 
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
+&emsp;**Địa điểm:** AWS Vietnam Office (Tầng 26), Thành phố Hồ Chí Minh  
 
-&emsp;**Vai trò:** Người tham dự
-
----
-
-### [Event 4](4.4-Event4/)
-&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #2 - DevOps on AWS
-
-&emsp;**Thời gian:** 08:30, ngày 17 tháng 11 năm 2025
-
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
-
-&emsp;**Vai trò:** Người tham dự
+&emsp;**Vai trò:** Người tham dự (FCJ Cloud Intern)
 
 ---
 
-### [Event 5](4.5-Event5/)
-&emsp;**Tên sự kiện:** Secure Your Applications: AWS Perimeter Protection Workshop
+### [Sự kiện 3](3.3-Event3/)
+&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS  
 
-&emsp;**Thời gian:** 08:30, ngày 19 tháng 11 năm 2025
+&emsp;**Thời gian:** 09:00, ngày 04 tháng 04 năm 2025  
 
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
+&emsp;**Địa điểm:** Lô E2a-7, Đường D1, Khu Công nghệ cao, TP. Thủ Đức, TP. Hồ Chí Minh  
 
-&emsp;**Vai trò:** Người tham dự
-
----
-
-### [Event 6](4.6-Event6/)
-&emsp;**Tên sự kiện:** AWS Well-Architected – Security Pillar Workshop
-
-&emsp;**Thời gian:** 08:30, ngày 29 tháng 11 năm 2025
-
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
-
-&emsp;**Vai trò:** Người tham dự
-
----
-
-### [Event 7](4.7-Event7/)
-&emsp;**Tên sự kiện:** BUILDING AGENTIC AI - Context Optimization with Amazon Bedrock
-
-&emsp;**Thời gian:** 08:30, ngày 5 tháng 12 năm 2025
-
-&emsp;**Địa điểm:** Tầng 26, Bitexco Tower, 02 Hai Trieu, phường Sài Gòn, Quận 1, TP. Hồ Chí Minh
-
-&emsp;**Vai trò:** Người tham dự
-
+&emsp;**Vai trò:** Người tham dự (FCJ Cloud Intern)
