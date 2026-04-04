@@ -1,28 +1,27 @@
 ---
 title: "Workshop"
-date: "2000-01-01"
-weight: 05
+date: "2026-01-11"
+weight: 4
 chapter: false
-pre: " <b> 5. </b> "
+pre: " <b> 4. </b> "
 ---
 
-# AWS Automated Incident Response and Forensics System Setup
+# Voice Summarizer — AI-Powered Audio Intelligence Platform
 
 #### Overview
 
-This guide provides a complete, step-by-step procedure for deploying our automated incident response and forensic system in AWS. This system leverages **CloudTrail**, **GuardDuty**, **VPC Flow Logs**, **Kinesis Firehose**, **Glue**, **Athena**, and **Lambda** functions orchestrated by **AWS Step Functions** to automatically detect, analyze, and quarantine compromised resources like EC2 instances and IAM users. Futher log forensics capacity is added by setting up a **Security Dashboard** hosted on S3 and accessed via **CloudFront** and **Cognito**, query log using **API Gateway** and **Lambda**.
-
-
+This guide provides a complete, step-by-step procedure for deploying the Voice Summarizer platform on AWS. This system leverages **Amazon Cognito**, **AWS Amplify**, **S3**, **DynamoDB**, **Lambda**, and **AWS Transcribe** for the audio intelligence pipeline, with the backend hosted on **EC2** inside a **VPC** and exposed through an **Application Load Balancer**. Users can upload audio recordings — meetings, lectures, interviews, and calls — which are automatically transcribed, semantically indexed, and made queryable through a conversational AI interface powered by **LiteLLM**.
 
 #### Content
-1. [Overview](5.1-Workshop-overview/)
-2. [Prerequisites](5.2-Prerequisites)
-3. [Phase 1: Foundation Setup](5.3-Foundation-Setup/)
-4. [Phase 2: Monitoring Setup](5.4-Monitoring-Setup/)
-5. [Phase 3: Processing Setup](5.5-Processing-Setup/)
-6. [Phase 4: Automation Setup](5.6-Automation-Setup/)
-7. [Phase 5: Dashboard Setup](5.7-Dashboard-Setup/)
-8. [Verify](5.8-Verify-Setup/)
-9. [Use CDK](5.9-Use-CDK/)
-10. [Cleanup](5.10-Cleanup/)
-11. [Appendices](5.11-Appendices/)
+
+1. [Workshop Overview](4.1-Workshop-overview/)
+2. [Prerequisites](4.2-Prerequisites/)
+3. [VPC & Networking](4.3-vpc/)
+4. [Storage Setup](4.4-storage/)
+5. [Lambda Functions](4.5-lambda/)
+6. [EC2 Setup](4.6-ec2/)
+7. [Application Load Balancer](4.7-alb/)
+8. [Cognito User Pool](4.8-cognito/)
+9. [Amplify Deployment](4.9-amplify/)
+10. [Clean Up](4.10-cleanup/)
+11. [Appendix](4.11-Appendices/)
