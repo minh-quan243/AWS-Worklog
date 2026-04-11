@@ -1,6 +1,6 @@
 ---
 title : "Overview"
-date: "2000-01-01" 
+date: "2026-04-04" 
 weight: 1
 chapter : false
 pre : " <b> 4.1. </b> "
@@ -30,36 +30,39 @@ A searchable library lists all processed recordings with AI-generated summaries,
 
 The platform is deployed in **ap-southeast-1 (Singapore)** and uses a hybrid architecture combining serverless triggers with an EC2-hosted backend:
 
-![Architecture Overview](/images/2-Proposal/AWS_Solution_Architecture.jpg)
+![Architecture Overview](/images/2-Proposal/AWS_Diagram_Flow.jpg)
 
 **Traffic flow (numbered as in the diagram):**
 
-- **(0)** User accesses the React frontend hosted on **AWS Amplify**
-- **(1)** User authenticates via **Amazon Cognito**; JWT tokens are issued
-- **(2–3)** Cognito post-confirmation trigger fires **Lambda** → provisions user record in **DynamoDB**
-- **(4)** API calls from the frontend reach the **Application Load Balancer (ALB)** in the public subnet
-- **(5–6)** ALB routes traffic through **VPC Gateway Endpoints** to the **EC2 instance** in the private subnet
-- **(7)** EC2 (FastAPI + Celery + Redis) reads/writes recording status and conversation memory to **DynamoDB**
-- **(8)** Audio files are uploaded directly to **S3 (Audio bucket)** via presigned URL
-- **(9)** S3 event notification triggers the **audio-to-text Lambda**
+- **(0)** User's DNS query resolves through **Amazon Route 53**, which maps the custom domain to the platform's endpoints
+- **(1)** Route 53 routes the browser to the React frontend hosted on **AWS Amplify**
+- **(2)** User authenticates via **Amazon Cognito**; JWT tokens are issued and stored in the browser session
+- **(3)** Cognito post-confirmation trigger fires **Lambda** (`user_creation_db`) → provisions user record in **DynamoDB** (`User` table)
+- **(4)** API calls from the frontend hit the **Application Load Balancer (ALB)** in the public subnet via the Route 53 API alias record
+- **(5)** ALB routes traffic through **VPC Gateway Endpoints** into the private subnet
+- **(6)** Gateway Endpoints deliver the request to the **EC2 instance** (FastAPI + Celery + Redis)
+- **(7)** EC2 reads/writes to **DynamoDB** (`voice_status_table`, `memory_AI`) and **S3** (Transcript, Vectors, Summarize) via Gateway Endpoints
+- **(8)** Audio files are uploaded directly to **S3 (Audio bucket)** via presigned URL from the frontend
+- **(9)** S3 event notification triggers the **audio-to-text Lambda** (`audio2text`)
 - **(10)** Lambda starts an **AWS Transcribe** job
 - **(11)** Transcribe writes the completed transcript to **S3 (Transcript bucket)**
-- **(12)** EC2 Celery worker reads the transcript from S3
+- **(12)** EC2 Celery worker reads the transcript from S3 to begin vectorisation
 - **(13)** EC2 writes and reads the vector index from **S3 (Vectors bucket)**
-- **(14–16)** Outbound LLM API calls from EC2 exit via **NAT Gateway → Internet Gateway → Internet**
+- **(14)** Outbound LLM API calls from EC2 exit via **NAT Gateway → Internet Gateway → LLM API**
 
 #### Services You Will Configure
 
 | Service | Purpose |
 |---|---|
+| Amazon Route 53 | Custom domain DNS; alias records routing to Amplify and ALB |
 | Amazon VPC | Network isolation with public and private subnets |
 | Internet Gateway | Inbound/outbound internet access for the public subnet |
 | NAT Gateway | Outbound-only internet access for the private subnet (LLM API calls) |
 | VPC Gateway Endpoints | Private connectivity to S3 and DynamoDB from the private subnet |
 | Security Group | Firewall rules for EC2 |
-| AWS S3 (×3) | Raw audio, transcripts, and vector embeddings |
-| Amazon DynamoDB (×2) | Recording status table and user table |
-| AWS Lambda (×2) | Audio transcription trigger and Cognito post-confirmation user provisioning |
+| AWS S3 (×1, four prefixes) | Single bucket `one4allthing` with `raw_audio/`, `transcripts/`, `vectors/`, and `summarize/` prefixes |
+| Amazon DynamoDB (×1) | Single table storing recording status, AI conversation memory, and user records |
+| AWS Lambda (×1) | Audio transcription trigger |
 | AWS EC2 | Backend compute: FastAPI API server, Celery worker, Redis |
 | Application Load Balancer | Routes frontend API traffic to the private EC2 instance |
 | Amazon Cognito | User pool with JWT-based authentication |

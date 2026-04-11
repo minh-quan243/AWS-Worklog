@@ -39,7 +39,5 @@ Click **Create bucket**.
 ---
 
 {{% notice tip %}}
-✅ You now have two S3 buckets configured:
-- **Audio & Transcript bucket** (`one4allthing`) with `raw_audio/` and `transcripts/` folders
-- **Vectors bucket** for storing the semantic index
+✅ You now have two S3 buckets configured: <br>- **Audio & Transcript bucket** (`one4allthing`) with `raw_audio/` and `transcripts/` folders <br>- **Vectors bucket** for storing the semantic index
 {{% /notice %}}

@@ -74,5 +74,5 @@ The policy must cover the following services and actions:
 #### Region
 
 {{% notice info %}}
-All resources in this workshop must be created in **ap-southeast-1 (Singapore)**.
+All resources in this workshop must be created in **ap-southeast-1 (Singapore)**. Make sure the correct region is selected in the AWS Console top-right region selector before starting each section.
 {{% /notice %}}

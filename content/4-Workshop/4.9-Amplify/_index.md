@@ -1,5 +1,5 @@
 ---
-title: "Amplify Deployment"
+title: "Amplify Frontend Deployment"
 date: 2026-04-04
 weight: 9
 chapter: false

@@ -71,32 +71,38 @@ Wait for the instance state to change to **Terminated** before proceeding with V
 
 ---
 
-### Step 6 — Empty and Delete the S3 Buckets
+### Step 6 — Delete the Route 53 Hosted Zone
 
-S3 buckets must be emptied before they can be deleted.
+Navigate to **Route 53 → Hosted zones**. Click on your hosted zone (e.g. `yourdomain.com`).
 
-Navigate to **S3**. For each of the three buckets (`one4allthing`, and your vectors bucket):
+First delete all non-default records inside the zone:
+1. Select all records **except** the NS and SOA records
+2. Click **Delete records** and confirm
 
-1. Click the bucket name
-2. Click **Empty** — type `permanently delete` and confirm
-3. After emptying, click **Delete** — type the bucket name and confirm
+Then, back in the Hosted zones list, select the zone and click **Delete**. Type the domain name to confirm.
 
-Repeat for all three buckets.
-
----
-
-### Step 7 — Delete the DynamoDB Tables
-
-Navigate to **DynamoDB → Tables**. Select each table and click **Delete**:
-
-- `VoiceSummarizerHistory`
-- `User`
-
-Confirm deletion for each. Note that DynamoDB on-demand tables delete quickly.
+{{% notice info %}}
+Route 53 Hosted Zones bill $0.50/month. If you plan to reuse the domain, you can keep the zone and only delete the alias A record — the NS and SOA records themselves are not billed separately.
+{{% /notice %}}
 
 ---
 
-### Step 8 — Delete the NAT Gateway
+### Step 7 — Empty and Delete the S3 Bucket
+
+Navigate to **S3**. Click on the `one4allthing` bucket (or your chosen name):
+
+1. Click **Empty** — type `permanently delete` and confirm. This removes all objects across all four prefixes (`raw_audio/`, `transcripts/`, `vectors/`, `summarize/`).
+2. After emptying, click **Delete** — type the bucket name and confirm.
+
+---
+
+### Step 8 — Delete the DynamoDB Table
+
+Navigate to **DynamoDB → Tables**. Select `voice-summarizer-table` (or your chosen name) and click **Delete**. Confirm deletion.
+
+---
+
+### Step 9 — Delete the NAT Gateway
 
 Navigate to **VPC → NAT Gateways**. Select `voice-summarizer-nat`. Click **Actions → Delete NAT gateway**. Confirm.
 
@@ -108,7 +114,7 @@ After deletion, navigate to **VPC → Elastic IPs**. Select the Elastic IP that 
 
 ---
 
-### Step 9 — Delete the VPC Endpoints
+### Step 10 — Delete the VPC Endpoints
 
 Navigate to **VPC → Endpoints**. Select both endpoints:
 
@@ -119,7 +125,7 @@ Click **Actions → Delete VPC endpoints**. Confirm.
 
 ---
 
-### Step 10 — Delete the Internet Gateway
+### Step 11 — Delete the Internet Gateway
 
 Navigate to **VPC → Internet Gateways**. Select `voice-summarizer-igw`.
 
@@ -128,7 +134,7 @@ Then, **delete it**: Click **Actions → Delete internet gateway**, confirm.
 
 ---
 
-### Step 11 — Delete Route Tables
+### Step 12 — Delete Route Tables
 
 Navigate to **VPC → Route Tables**. Select `voice-summarizer-private-rt`. Click **Actions → Delete route table**. Confirm.
 
@@ -136,7 +142,7 @@ The main route table associated with the VPC will be deleted automatically when 
 
 ---
 
-### Step 12 — Delete Subnets
+### Step 13 — Delete Subnets
 
 Navigate to **VPC → Subnets**. Select each subnet and click **Actions → Delete subnet**:
 
@@ -145,19 +151,19 @@ Navigate to **VPC → Subnets**. Select each subnet and click **Actions → Dele
 
 ---
 
-### Step 13 — Delete the Security Group
+### Step 14 — Delete the Security Group
 
 Navigate to **VPC → Security Groups**. Select `voice-summarizer-ec2-sg`. Click **Actions → Delete security groups**. Confirm.
 
 ---
 
-### Step 14 — Delete the VPC
+### Step 15 — Delete the VPC
 
 Navigate to **VPC → Your VPCs**. Select `voice-summarizer-vpc`. Click **Actions → Delete VPC**. Confirm.
 
 ---
 
-### Step 15 — Delete IAM Roles
+### Step 16 — Delete IAM Roles
 
 Navigate to **IAM → Roles**. Search for and delete the execution roles created for:
 
@@ -177,8 +183,9 @@ After completing all steps above, verify in the AWS Console:
 | NAT Gateways | No gateways (state: Deleted) |
 | Load Balancers | No active load balancers |
 | Elastic IPs | No allocated IPs |
-| S3 Buckets | Workshop buckets deleted |
-| DynamoDB Tables | Workshop tables deleted |
+| Route 53 Hosted Zones | Workshop zone deleted |
+| S3 Buckets | `one4allthing` bucket deleted |
+| DynamoDB Tables | `voice-summarizer-table` deleted |
 | Lambda Functions | Workshop functions deleted |
 | Cognito User Pools | Workshop pool deleted |
 | Amplify Apps | Workshop app deleted |

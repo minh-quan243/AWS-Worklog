@@ -90,13 +90,5 @@ In the DynamoDB console, confirm all three tables are listed with **Active** sta
 ---
 
 {{% notice tip %}}
-✅ All three DynamoDB tables are ready:
-- **voice_status_table** — tracks recording pipeline state (status, progress, stage)
-- **memory_AI** — stores AI chat histories and conversation memory
-- **User** — stores user records created on Cognito sign-up
-
-Set the corresponding environment variables on the EC2 instance:
-- `STATUS_TABLE=voice_status_table`
-- `MEMORY_TABLE=memory_AI`
-- `USERS_TABLE` in the Lambda code maps to `User`
+✅ All three DynamoDB tables are ready: <br> - **voice_status_table** — tracks recording pipeline state (status, progress, stage) <br> - **memory_AI** — stores AI chat histories and conversation memory <br> - **User** — stores user records created on Cognito sign-up <br> Set the corresponding environment variables on the EC2 instance: <br> - `STATUS_TABLE=voice_status_table` <br> - `MEMORY_TABLE=memory_AI` <br> - `USERS_TABLE` in the Lambda code maps to `User`
 {{% /notice %}}

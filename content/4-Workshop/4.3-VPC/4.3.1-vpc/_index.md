@@ -219,10 +219,5 @@ Navigate to **Subnets**, select `voice-summarizer-public-subnet`, and click **Ac
 ---
 
 {{% notice tip %}}
-✅ You have completed the networking setup. Your VPC now has:
-
-- A **public subnet** with internet access via the Internet Gateway (for the ALB)
-- A **private subnet** with outbound-only access via the NAT Gateway (for EC2)
-- **Gateway Endpoints** for private S3 and DynamoDB access
-- A **security group** protecting the EC2 instance
+✅ You have completed the networking setup. Your VPC now has:<br>• A **public subnet** with internet access via the Internet Gateway (for the ALB)<br>• A **private subnet** with outbound-only access via the NAT Gateway (for EC2)<br>• **Gateway Endpoints** for private S3 and DynamoDB access<br>• A **security group** protecting the EC2 instance
 {{% /notice %}}
