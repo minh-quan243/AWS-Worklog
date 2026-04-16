@@ -30,7 +30,7 @@ A searchable library lists all processed recordings with AI-generated summaries,
 
 The platform is deployed in **ap-southeast-1 (Singapore)** and uses a hybrid architecture combining serverless triggers with an EC2-hosted backend:
 
-![Architecture Overview](/images/2-Proposal/AWS_Diagram_Flow.jpg)
+![Architecture Overview](/images/2-Proposal/AWSWorkshopArchitecture-Final.jpg)
 
 **Traffic flow (numbered as in the diagram):**
 

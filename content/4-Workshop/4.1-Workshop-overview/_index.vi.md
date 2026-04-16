@@ -30,7 +30,7 @@ Một thư viện có thể tìm kiếm liệt kê tất cả các bản ghi âm
 
 Nền tảng được triển khai tại **ap-southeast-1 (Singapore)** và sử dụng kiến trúc lai kết hợp giữa các trigger không máy chủ (serverless) với một backend được lưu trữ trên EC2:
 
-![Tổng quan Kiến trúc](/images/2-Proposal/AWS_Diagram_Flow.jpg)
+![Tổng quan Kiến trúc](/images/2-Proposal/AWSWorkshopArchitecture-Final.jpg)
 
 **Luồng lưu lượng (được đánh số như trong sơ đồ):**
 

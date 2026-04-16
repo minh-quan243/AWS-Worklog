@@ -1,14 +1,10 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: "2026-03-02"
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-
-![AWS Logo](/images/2-Proposal/AWSLogo.png)
-
-# Proposal Link: [Proposal](https://docs.google.com/document/d/1Y2f0fEwtpavgm4-i7ZciMh5AVfeVkyjh/edit)
 
 # Voice Summarizer — The Archivist
 ## AI-Powered Audio Intelligence Platform
@@ -67,45 +63,45 @@ Voice Summarizer eliminates the manual overhead of replaying, note-taking, and s
 
 ### 3. Solution Architecture
 
-The system is deployed in AWS ap-southeast-1 (Singapore) and composed of eight loosely coupled layers:
+![Proposed Architecture](/images/2-Proposal/AWSWorkshopArchitecture-Final.jpg)
 
-![AWS Architecture](/images/2-Proposal/AWSWorkshopArchitecture-Final.png)
+The system is deployed in AWS ap-southeast-1 (Singapore) and composed of nine loosely coupled layers:
 
 | Layer | Technology | Responsibility |
 |---|---|---|
+| DNS | Amazon Route 53 | Custom domain resolution; routes users to Amplify frontend and API subdomain to ALB |
 | Frontend Hosting | AWS Amplify | Serves the React + Vite SPA; manages CDN and HTTPS |
-| Auth | AWS Cognito | User registration, JWT token management, post-confirmation Lambda trigger |
+| Auth | AWS Cognito | User registration and JWT token management; user records provisioned by EC2 on first request |
 | Network | VPC · ALB · NAT Gateway · Internet Gateway · Gateway Endpoints | Public/private subnet isolation; routes traffic to EC2; enables secure S3/DynamoDB access from private subnet |
 | Compute | AWS EC2 (private subnet) | Runs FastAPI API server, Celery worker, and Redis broker |
-| Transcription | AWS Transcribe + Lambda | Speech-to-text; Lambda (`audio2text_lambda.py`) triggered by S3 Audio object creation |
-| Vector Store | Sentence Transformers + S3 Vectors bucket | Embedding, chunking, semantic search; vectors persisted to dedicated S3 bucket |
+| Transcription | AWS Transcribe + Lambda | Speech-to-text; single Lambda (`audio2text_lambda`) triggered by S3 `raw_audio/` object creation |
+| Vector Store | Sentence Transformers + S3 (`vectors/` prefix) | Embedding, chunking, semantic search; vectors persisted under a dedicated prefix in the shared S3 bucket |
 | LLM Layer | LiteLLM (model-agnostic) | Abstraction over OpenAI, Anthropic, Bedrock; outbound calls via NAT Gateway |
-| Storage | S3 (Audio) · S3 (Transcript) · S3 (Vectors) · DynamoDB | Three dedicated S3 buckets; DynamoDB for status, metadata, and conversation memory |
+| Storage | S3 (single bucket, multiple prefixes) · DynamoDB (single table) | One S3 bucket organises data across `raw_audio/`, `transcripts/`, `vectors/`, and `summarize/` prefixes; one DynamoDB table stores all platform state |
 
 #### AWS Services Used
 
-- **AWS Amplify**: Hosts the React + Vite frontend (step 0 in diagram). Users access the application directly through Amplify's managed CDN endpoint. Cognito JWT tokens are obtained here (step 1) and passed with all subsequent API calls.
-- **Amazon Cognito**: Manages user registration, login, and JWT session management. A post-confirmation trigger fires a Lambda function (step 2) that provisions a new user record in DynamoDB (step 3).
-- **AWS Lambda (user_creation_db.py)**: Cognito post-confirmation trigger; creates the user's DynamoDB entry on first sign-up (steps 2–3).
-- **Application Load Balancer (ALB)**: Sits in the public subnet and receives all API traffic from Amplify (step 4). Routes requests through Gateway Endpoints into the private subnet (step 5), terminating TLS and distributing load to the EC2 target.
-- **VPC Gateway Endpoints**: Deployed in the private subnet, they allow the EC2 instance to reach S3 and DynamoDB over the AWS private network without traversing the NAT Gateway (steps 5–6), improving security and reducing NAT data-processing costs.
-- **AWS EC2 (private subnet)**: The core compute node. Runs the FastAPI API server, Celery worker, and Redis broker as co-located processes. Handles all business logic: presigned URL generation, RAG Q&A, vectorisation, and status management. Accesses DynamoDB (step 7), S3 Vectors (step 13), and S3 Transcript (step 12) via Gateway Endpoints; reaches external LLM APIs via NAT Gateway (step 14).
-- **NAT Gateway + Internet Gateway**: Provide outbound internet access from the private subnet EC2 instance (steps 14 → 15 → 16), used exclusively for external LLM API calls through LiteLLM. Inbound traffic is always routed through the ALB.
-- **AWS S3 — Audio Bucket**: Receives audio file uploads via presigned URLs (step 8). An S3 event notification triggers the transcription Lambda on object creation (step 9).
-- **AWS Lambda (audio2text_lambda.py)**: Triggered by the S3 Audio bucket on object creation (step 9). Starts an AWS Transcribe job (step 10).
-- **AWS Transcribe**: Performs speech-to-text conversion on the audio file and writes the completed transcript to the S3 Transcript bucket (step 11).
-- **AWS S3 — Transcript Bucket**: Stores completed transcripts. Read by the EC2 Celery worker during vectorisation (step 12).
-- **AWS S3 — Vectors Bucket**: Stores the custom dual-granularity vector index (chunk embeddings + segment summaries + global summary). Read and written by the EC2 instance (step 13).
-- **Amazon DynamoDB**: Stores per-recording processing status, progress percentage, stage label, short AI summary, transcript ID, and per-session conversation memory. Written by both the Lambda user trigger (step 3) and the EC2 Celery worker (step 7).
-- **AWS IAM**: Role-based policies scope each service's access — Lambda roles for S3/DynamoDB/Transcribe; EC2 instance profile for S3/DynamoDB; Amplify service role for hosting.
+- **Amazon Route 53**: Provides DNS for the platform's custom domain. A public Hosted Zone holds NS records that resolve the domain; an alias A record points the frontend domain to the Amplify CDN endpoint and an alias A record points the API subdomain to the ALB DNS name.
+- **AWS Amplify**: Hosts the React + Vite frontend. Users reach the application through the Route 53-resolved domain. Cognito JWT tokens are obtained and passed with all subsequent API calls.
+- **Amazon Cognito**: Manages user registration, login, and JWT session management. There is no post-confirmation Lambda trigger — user records in DynamoDB are written directly by the EC2 backend on the user's first authenticated API request.
+- **Application Load Balancer (ALB)**: Sits in the public subnet and receives all API traffic from Amplify. Routes requests through Gateway Endpoints into the private subnet, terminating TLS and distributing load to the EC2 target.
+- **VPC Gateway Endpoints**: Deployed in the private subnet, they allow the EC2 instance to reach S3 and DynamoDB over the AWS private network without traversing the NAT Gateway, improving security and reducing NAT data-processing costs.
+- **AWS EC2 (private subnet)**: The core compute node. Runs the FastAPI API server, Celery worker, and Redis broker as co-located processes. Writes user records to DynamoDB on first request, updates recording status, reads transcripts from S3, writes summaries and vectors, and updates AI conversation memory. Reaches external LLM APIs via NAT Gateway.
+- **NAT Gateway + Internet Gateway**: Provide outbound internet access from the private subnet EC2 instance, used exclusively for external LLM API calls through LiteLLM. Inbound traffic always arrives through the ALB.
+- **AWS S3 (single bucket, `one4allthing`)**: One bucket serves all storage needs, organised into four prefixes — `raw_audio/` receives audio uploads via presigned URLs, `transcripts/` receives Transcribe output, `summarize/` stores pre-computed global meeting summaries, and `vectors/` stores the dual-granularity semantic index. An S3 event notification on `raw_audio/` triggers the transcription Lambda.
+- **AWS Lambda (audio2text_lambda.py)**: The sole Lambda function. Triggered by the S3 `raw_audio/` prefix on object creation. Starts an AWS Transcribe job.
+- **AWS Transcribe**: Performs speech-to-text conversion on the audio file and writes the completed transcript to the `transcripts/` prefix of the S3 bucket.
+- **Amazon DynamoDB (single table)**: One table stores all platform state — recording pipeline status and progress, per-session AI conversation memory and chat history, and user records written by EC2 on first login.
+- **AWS IAM**: Role-based policies scope each service's access — Lambda role for S3/Transcribe; EC2 instance profile for S3/DynamoDB; Amplify service role for hosting.
 
 #### Component Design
 
+- **DNS (Route 53)**: A public Hosted Zone for the custom domain holds NS records. Two alias A records route the apex or `www` subdomain to the Amplify CDN endpoint and the `api.` subdomain to the ALB DNS name, eliminating the need for users to reference raw AWS URLs.
 - **Frontend (AWS Amplify)**: React + Vite SPA with pages for Landing, Login, Register, Confirm, Dashboard, Library, and the AI Assistant chat. Authentication state is managed via AWS Cognito; protected routes redirect unauthenticated users. The `AssistantPage` and `LibraryPage` are the primary user-facing surfaces.
-- **API Layer (EC2 — FastAPI)**: FastAPI with two routers — `recordings` (upload URL generation, processing trigger, Q&A, status polling) and `library` (listing and filtering recordings). All endpoints validate Cognito JWT tokens. Co-located on EC2 alongside Celery and Redis.
-- **Async Pipeline (EC2 — Celery Worker)**: A Celery worker (`process_audio_task`) orchestrates the full pipeline: it polls the S3 Audio bucket until the upload is confirmed (`wait_until_uploaded`), waits for the Transcribe job to complete, runs vectorisation, and writes status transitions (`Pending → Processing → Completed / Failed`) to DynamoDB at each stage with a numeric progress percentage and stage label. Redis (also on EC2) serves as the Celery broker.
-- **Vector & Semantic Index (EC2 → S3 Vectors)**: After transcription, the transcript is split into overlapping chunks using LangChain's text splitter, grouped into topic segments via a sliding-window coherence algorithm, and each segment is summarised by the LLM. Embeddings are generated using Sentence Transformers (multilingual-capable) and persisted to the S3 Vectors bucket at two granularities: individual chunks (precise retrieval) and segment-level summaries (topic-level queries). A global summary is pre-computed and stored for full-meeting summary queries.
-- **RAG Question Router**: Each user query is classified by an LLM call with a structured output schema into one of five intents (Factual, Comprehensive, Topic Summary, Full Summary, Off-topic). The router selects the matching retrieval strategy. Confidence scores below a threshold trigger automatic upgrades to a more thorough strategy. LLM calls for classification and generation exit the VPC via NAT Gateway.
+- **API Layer (EC2 — FastAPI)**: FastAPI with two routers — `recordings` (upload URL generation, processing trigger, Q&A, status polling) and `library` (listing and filtering recordings). All endpoints validate Cognito JWT tokens. On a user's first authenticated request, the FastAPI layer writes their user record directly to DynamoDB, replacing the need for a Cognito Lambda trigger. Co-located on EC2 alongside Celery and Redis.
+- **Async Pipeline (EC2 — Celery Worker)**: A Celery worker (`process_audio_task`) orchestrates the full pipeline: it polls the `raw_audio/` prefix until the upload is confirmed (`wait_until_uploaded`), waits for the Transcribe job to complete, runs vectorisation, and writes status transitions (`pending → processing → completed / failed`) to DynamoDB at each stage. Redis (also on EC2) serves as the Celery broker.
+- **Vector & Semantic Index (EC2 → S3 `vectors/` + `summarize/`)**: After transcription, the transcript is split into overlapping chunks using LangChain's text splitter, grouped into topic segments, and each segment is summarised by the LLM. Embeddings are generated using Sentence Transformers and persisted under the `vectors/` prefix. Pre-computed global summaries are stored under `summarize/` for instant full-meeting summary responses — all within the same S3 bucket.
+- **RAG Question Router**: Each user query is classified by an LLM call into one of five intents (Factual, Comprehensive, Topic Summary, Full Summary, Off-topic). The router selects the matching retrieval strategy. LLM calls exit the VPC via NAT Gateway.
 - **Conversation Memory (DynamoDB)**: Each user-recording session maintains a memory object in DynamoDB containing a rolling working window (last 10 turns), a compressed summary of older turns, and a source history log. Sessions survive EC2 restarts and can be resumed across devices.
 
 ---
@@ -162,11 +158,12 @@ The architecture includes both fixed monthly charges (EC2, ALB, NAT Gateway) and
 | **NAT Gateway** | ~$43/month | $0.059/hr × 730 hrs fixed + $0.059/GB data processed; dominant cost — routes EC2 outbound LLM API calls |
 | **ALB (Application Load Balancer)** | ~$18/month | ~$0.008/hr base + LCU charges; minimum cost at low request volume |
 | **AWS EC2 (t3.small, private subnet)** | ~$15/month | FastAPI + Celery + Redis co-located; t3.small ($0.0208/hr × 730 hrs); upgradeable to t3.medium (~$30/month) if needed |
+| **Amazon Route 53** | ~$0.50/month | $0.50/month per public Hosted Zone; plus $0.40/million DNS queries (negligible at low traffic) |
 | **AWS Amplify** | ~$0.01–0.05/month | Frontend hosting; negligible at low traffic |
-| **AWS S3 (3 buckets)** | ~$0.10–0.30/month | Audio, Transcript, and Vectors buckets; scales with recording volume |
+| **AWS S3 (1 bucket, 4 prefixes)** | ~$0.05–0.20/month | Single `one4allthing` bucket with `raw_audio/`, `transcripts/`, `vectors/`, `summarize/` prefixes; scales with recording volume |
 | **AWS Transcribe** | ~$0.02–0.30/month | $0.024/min; highly variable — scales directly with hours of audio processed |
 | **AWS Lambda (2 functions)** | ~$0.00/month | Well within free tier (1M requests/month) |
-| **Amazon DynamoDB** | ~$0.00–0.05/month | On-demand pricing; low read/write volume at initial scale |
+| **Amazon DynamoDB (1 table)** | ~$0.00–0.05/month | On-demand pricing; single table stores all platform state; low read/write volume at initial scale |
 | **Amazon Cognito** | ~$0.00/month | Free tier: first 50,000 MAUs |
 | **Data Transfer (inbound/outbound)** | ~$0.05–0.15/month | S3 inbound free; ALB and EC2 outbound egress at $0.09/GB |
 
