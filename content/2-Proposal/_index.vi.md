@@ -155,19 +155,19 @@ Kiến trúc này bao gồm cả chi phí cố định hàng tháng (EC2, ALB, N
 
 | Dịch vụ | Chi phí Hàng tháng Ước tính | Yếu tố Chi phí |
 |---|---|---|
-| **NAT Gateway** | \~$43/tháng | $0.059/giờ × 730 giờ cố định + $0.059/GB dữ liệu được xử lý; chi phí chiếm ưu thế — định tuyến các lời gọi LLM API ra ngoài từ EC2 |
-| **ALB (Application Load Balancer)** | ~$18/tháng | Phí cơ sở \~$0.008/giờ + phí LCU; chi phí tối thiểu ở mức khối lượng yêu cầu thấp |
-| **AWS EC2 (t3.small, mạng con riêng)** | ~$15/tháng | FastAPI + Celery + Redis chạy cùng nhau; t3.small ($0.0208/giờ × 730 giờ); có thể nâng cấp lên t3.medium (~$30/tháng) nếu cần |
-| **Amazon Route 53** | \~$0.50/tháng | $0.50/tháng cho mỗi Public Hosted Zone; cộng thêm $0.40/triệu truy vấn DNS (không đáng kể ở lưu lượng thấp) |
+| **NAT Gateway** | ~$43/tháng | $0.059/giờ × 730 giờ cố định + $0.059/GB dữ liệu được xử lý; chi phí chiếm ưu thế — định tuyến các lời gọi LLM API ra ngoài từ EC2 |
+| **ALB (Application Load Balancer)** | ~$18/tháng | Phí cơ sở ~$0.008/giờ + phí LCU; chi phí tối thiểu ở mức khối lượng yêu cầu thấp |
+| **AWS EC2 (t3.large, mạng con riêng)** | ~$60/tháng | FastAPI + Celery + Redis chạy cùng nhau; t3.large ($0.0832/giờ × 730 giờ); được khuyến nghị để chạy mô hình nhúng (embedding model) Sentence Transformer mà không bị áp lực về bộ nhớ |
+| **Amazon Route 53** | ~$0.50/tháng | $0.50/tháng cho mỗi Public Hosted Zone; cộng thêm $0.40/triệu truy vấn DNS (không đáng kể ở lưu lượng thấp) |
 | **AWS Amplify** | ~$0.01–0.05/tháng | Lưu trữ Frontend; không đáng kể ở lưu lượng thấp |
-| **AWS S3 (1 bucket, 4 tiền tố)** | \~$0.05–0.20/tháng | Bucket duy nhất `one4allthing` với các tiền tố `raw_audio/`, `transcripts/`, `vectors/`, `summarize/`; tăng tỷ lệ thuận với khối lượng bản ghi âm |
+| **AWS S3 (1 bucket, 4 tiền tố)** | ~$0.05–0.20/tháng | Bucket duy nhất `one4allthing` với các tiền tố `raw_audio/`, `transcripts/`, `vectors/`, `summarize/`; tăng tỷ lệ thuận với khối lượng bản ghi âm |
 | **AWS Transcribe** | ~$0.02–0.30/tháng | $0.024/phút; dao động mạnh — tỷ lệ thuận trực tiếp với số giờ âm thanh được xử lý |
 | **AWS Lambda (2 hàm)** | ~$0.00/tháng | Hoàn toàn nằm trong bậc miễn phí (1 triệu yêu cầu/tháng) |
-| **Amazon DynamoDB (1 bảng)** | \~$0.00–0.05/tháng | Định giá theo nhu cầu (On-demand); một bảng duy nhất lưu trữ toàn bộ trạng thái nền tảng; khối lượng đọc/ghi thấp ở quy mô ban đầu |
+| **Amazon DynamoDB (1 bảng)** | ~$0.00–0.05/tháng | Định giá theo nhu cầu (On-demand); một bảng duy nhất lưu trữ toàn bộ trạng thái nền tảng; khối lượng đọc/ghi thấp ở quy mô ban đầu |
 | **Amazon Cognito** | ~$0.00/tháng | Bậc miễn phí: 50.000 người dùng hoạt động hàng tháng (MAUs) đầu tiên |
-| **Truyền tải Dữ liệu (vào/ra)** | \~$0.05–0.15/tháng | Dữ liệu vào S3 miễn phí; dữ liệu ra của ALB và EC2 ở mức $0.09/GB |
-
-**Tổng chi phí ước tính: \~$76–$77/tháng ở quy mô tối thiểu** (chiếm phần lớn là NAT Gateway \~$43 + ALB ~$18 + EC2 \~$15)
+| **Truyền tải Dữ liệu (vào/ra)** | ~$0.05–0.15/tháng | Dữ liệu vào S3 miễn phí; dữ liệu ra của ALB và EC2 ở mức $0.09/GB |
+ 
+**Tổng chi phí ước tính: ~$121–$122/tháng ở quy mô tối thiểu** (chiếm phần lớn là EC2 ~$60 + NAT Gateway ~$43 + ALB ~$18 + Route 53 ~$0.50; chi phí S3 và DynamoDB không đáng kể ở lưu lượng thấp)
 
 > **Lưu ý tối ưu hóa chi phí**: NAT Gateway là yếu tố tạo ra chi phí lớn nhất (\~56% mức cơ sở cố định). Nếu khối lượng lời gọi LLM API thấp hoặc có thể gom nhóm (batch), việc sử dụng VPC Interface Endpoint cho Bedrock (nếu dùng các mô hình do AWS lưu trữ qua LiteLLM) có thể loại bỏ lưu lượng NAT Gateway cho các lời gọi LLM và làm giảm đáng kể chi phí này. Ngoài ra, việc chuyển sang một EC2 instance ở mạng con công khai với một Elastic IP sẽ loại bỏ hoàn toàn NAT Gateway, mặc dù sẽ phải đánh đổi một chút về mặt bảo mật.
 

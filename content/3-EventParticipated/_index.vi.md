@@ -27,14 +27,3 @@ Trong suốt quá trình thực tập, mình đã có cơ hội tham gia bảy s
 &emsp;**Địa điểm:** AWS Vietnam Office (Tầng 26), Thành phố Hồ Chí Minh  
 
 &emsp;**Vai trò:** Người tham dự (FCJ Cloud Intern)
-
----
-
-### [Sự kiện 3](3.3-Event3/)
-&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS  
-
-&emsp;**Thời gian:** 09:00, ngày 04 tháng 04 năm 2025  
-
-&emsp;**Địa điểm:** Lô E2a-7, Đường D1, Khu Công nghệ cao, TP. Thủ Đức, TP. Hồ Chí Minh  
-
-&emsp;**Vai trò:** Người tham dự (FCJ Cloud Intern)

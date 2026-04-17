@@ -27,14 +27,3 @@ During my internship, I had the opportunity to participate in seven different ev
 &emsp;**Location:** AWS Vietnam Office (Floor 26), Ho Chi Minh City  
 
 &emsp;**Role:** Attendee (FCJ Cloud Intern)
-
----
-
-### [Event 3](3.3-Event3/)
-&emsp;**Event Name:** AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS  
-
-&emsp;**Time:** 09:00, April 4, 2025  
-
-&emsp;**Location:** E2a-7 Lot, D1 Street, Saigon Hi-Tech Park, Thu Duc City, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee (FCJ Cloud Intern)

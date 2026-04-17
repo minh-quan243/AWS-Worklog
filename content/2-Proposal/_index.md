@@ -157,7 +157,7 @@ The architecture includes both fixed monthly charges (EC2, ALB, NAT Gateway) and
 |---|---|---|
 | **NAT Gateway** | ~$43/month | $0.059/hr × 730 hrs fixed + $0.059/GB data processed; dominant cost — routes EC2 outbound LLM API calls |
 | **ALB (Application Load Balancer)** | ~$18/month | ~$0.008/hr base + LCU charges; minimum cost at low request volume |
-| **AWS EC2 (t3.small, private subnet)** | ~$15/month | FastAPI + Celery + Redis co-located; t3.small ($0.0208/hr × 730 hrs); upgradeable to t3.medium (~$30/month) if needed |
+| **AWS EC2 (t3.large, private subnet)** | ~$60/month | FastAPI + Celery + Redis co-located; t3.large ($0.0832/hr × 730 hrs); recommended for running the Sentence Transformer embedding model without memory pressure |
 | **Amazon Route 53** | ~$0.50/month | $0.50/month per public Hosted Zone; plus $0.40/million DNS queries (negligible at low traffic) |
 | **AWS Amplify** | ~$0.01–0.05/month | Frontend hosting; negligible at low traffic |
 | **AWS S3 (1 bucket, 4 prefixes)** | ~$0.05–0.20/month | Single `one4allthing` bucket with `raw_audio/`, `transcripts/`, `vectors/`, `summarize/` prefixes; scales with recording volume |
@@ -166,8 +166,8 @@ The architecture includes both fixed monthly charges (EC2, ALB, NAT Gateway) and
 | **Amazon DynamoDB (1 table)** | ~$0.00–0.05/month | On-demand pricing; single table stores all platform state; low read/write volume at initial scale |
 | **Amazon Cognito** | ~$0.00/month | Free tier: first 50,000 MAUs |
 | **Data Transfer (inbound/outbound)** | ~$0.05–0.15/month | S3 inbound free; ALB and EC2 outbound egress at $0.09/GB |
-
-**Estimated total: ~$76–$77/month at minimal scale** (dominated by NAT Gateway ~$43 + ALB ~$18 + EC2 ~$15)
+ 
+**Estimated total: ~$121–$122/month at minimal scale** (dominated by EC2 ~$60 + NAT Gateway ~$43 + ALB ~$18 + Route 53 ~$0.50; S3 and DynamoDB costs are negligible at low volume)
 
 > **Cost optimisation note**: The NAT Gateway is the single largest cost driver (~56% of the fixed baseline). If LLM API call volume is low or can be batched, a VPC Interface Endpoint for Bedrock (if using AWS-hosted models via LiteLLM) could eliminate NAT Gateway traffic for LLM calls and meaningfully reduce this cost. Alternatively, moving to an EC2 instance in the public subnet with an Elastic IP removes the NAT Gateway entirely, though at a minor security trade-off.
 
